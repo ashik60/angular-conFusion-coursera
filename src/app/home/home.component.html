@@ -33,7 +33,7 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card fxFlex>
+<mat-card *ngIf="fLeader" fxFlex>
   <mat-card-header>
     <div mat-card-avatar></div>
     <mat-card-title>
