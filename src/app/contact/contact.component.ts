@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 
@@ -9,9 +9,10 @@ import { Feedback, ContactType } from '../shared/feedback';
 })
 export class ContactComponent implements OnInit {
 
-  feedbckForm: FormGroup;
+  feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
+  @ViewChild('fform') feedbackFormDirective;
 
   constructor(private fb: FormBuilder) { 
     this.createForm();
@@ -21,10 +22,10 @@ export class ContactComponent implements OnInit {
   }
 
   createForm() {
-    this.feedbckForm = this.fb.group({
-      firstname: '',
-      lastname: '',
-      telnum: 0,
+    this.feedbackForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname:  ['', Validators.required],
+      telnum:  [0, Validators.required],
       email: '',
       agree: false,
       contactType: 'None',
@@ -33,9 +34,19 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.feedback = this.feedbckForm.value;
+    this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
-    this.feedbckForm.reset();
+    this.feedbackForm.reset({
+      firstname: '',
+      lastname:  '',
+      telnum:  0,
+      email: '',
+      agree: false,
+      contactType: 'None',
+      message: ''
+    });
+
+    this.feedbackFormDirective.resetForm();
   }
 
 }
