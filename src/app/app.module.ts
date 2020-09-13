@@ -8,10 +8,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -55,6 +57,9 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
     MatCheckboxModule
   ],
   providers: [],
