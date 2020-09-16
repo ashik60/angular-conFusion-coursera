@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -62,7 +63,8 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [],
   entryComponents: [
