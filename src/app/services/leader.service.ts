@@ -3,6 +3,7 @@ import { Leader } from '../shared/leader';
 import { LEADERS } from '../shared/leaders';
 import { of, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

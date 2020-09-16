@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 
-
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [
@@ -64,9 +65,12 @@ import { LoginComponent } from './login/login.component';
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'BaseURL', useValue: baseURL }
+  ],
   entryComponents: [
     LoginComponent
   ],
